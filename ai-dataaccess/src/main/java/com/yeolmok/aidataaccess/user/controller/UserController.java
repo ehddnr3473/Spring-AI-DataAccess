@@ -1,7 +1,6 @@
 package com.yeolmok.aidataaccess.user.controller;
 
 import com.yeolmok.aidataaccess.user.entity.User;
-import com.yeolmok.aidataaccess.user.repository.UserRepository;
 import com.yeolmok.aidataaccess.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +14,6 @@ import java.util.List;
 public class UserController {
 
     private final UserService userService;
-    private final UserRepository userRepository;
 
     @GetMapping
     public List<User> getAllUsers() {
@@ -31,7 +29,7 @@ public class UserController {
 
     @GetMapping("/by-name/{name}")
     public ResponseEntity<User> getUserByName(@PathVariable String name) {
-        return userRepository.findByName(name)
+        return userService.findByName(name)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
     }
@@ -43,7 +41,7 @@ public class UserController {
 
     @PutMapping("/{id}")
     public ResponseEntity<User> updateUser(@PathVariable Long id, @RequestBody User newUser) {
-        return userRepository.findById(id)
+        return userService.findById(id)
                 .map(user -> {
                     user.setName(newUser.getName());
                     user.setEmail(newUser.getEmail());
@@ -54,9 +52,9 @@ public class UserController {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
-        return userRepository.findById(id)
+        return userService.findById(id)
                 .map(user -> {
-                    userRepository.deleteById(id);
+                    userService.deleteById(id);
                     return ResponseEntity.noContent().<Void>build();
                 })
                 .orElse(ResponseEntity.notFound().build());
