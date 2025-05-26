@@ -1,7 +1,7 @@
-package com.yeolmok.aidataaccess.user.controller;
+package com.yeolmok.aidataaccess.domain.user.controller;
 
-import com.yeolmok.aidataaccess.user.entity.User;
-import com.yeolmok.aidataaccess.user.service.UserService;
+import com.yeolmok.aidataaccess.domain.user.entity.User;
+import com.yeolmok.aidataaccess.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

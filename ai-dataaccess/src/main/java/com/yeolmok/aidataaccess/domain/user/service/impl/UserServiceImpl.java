@@ -1,11 +1,11 @@
-package com.yeolmok.aidataaccess.user.service.impl;
+package com.yeolmok.aidataaccess.domain.user.service.impl;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.yeolmok.aidataaccess.user.entity.User;
-import com.yeolmok.aidataaccess.user.repository.UserRepository;
-import com.yeolmok.aidataaccess.user.service.UserService;
+import com.yeolmok.aidataaccess.domain.user.entity.User;
+import com.yeolmok.aidataaccess.domain.user.repository.UserRepository;
+import com.yeolmok.aidataaccess.domain.user.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

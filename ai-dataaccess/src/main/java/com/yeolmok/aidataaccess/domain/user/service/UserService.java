@@ -1,9 +1,9 @@
-package com.yeolmok.aidataaccess.user.service;
+package com.yeolmok.aidataaccess.domain.user.service;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.yeolmok.aidataaccess.user.entity.User;
+import com.yeolmok.aidataaccess.domain.user.entity.User;
 
 public interface UserService {
 

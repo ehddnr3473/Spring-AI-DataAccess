@@ -1,6 +1,6 @@
-package com.yeolmok.aidataaccess.user.repository;
+package com.yeolmok.aidataaccess.domain.user.repository;
 
-import com.yeolmok.aidataaccess.user.entity.User;
+import com.yeolmok.aidataaccess.domain.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.List;
 

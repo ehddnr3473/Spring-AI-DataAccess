@@ -1,4 +1,4 @@
-package com.yeolmok.aidataaccess.user.entity;
+package com.yeolmok.aidataaccess.domain.user.entity;
 
 import jakarta.persistence.*;
 import lombok.Getter;
