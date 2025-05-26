@@ -14,6 +14,6 @@ public class ChatController {
 
     @PostMapping
     public String chat(@RequestBody PromptDto promptDto) {
-        return chatClient.prompt(promptDto.getPrompt()).call().content();
+        return chatClient.prompt(promptDto.prompt()).call().content();
     }
 }

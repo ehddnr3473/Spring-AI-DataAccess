@@ -28,10 +28,8 @@ public class UserController {
     }
 
     @GetMapping("/by-name/{name}")
-    public ResponseEntity<User> getUserByName(@PathVariable String name) {
-        return userService.findByName(name)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public List<User> getUserByName(@PathVariable String name) {
+        return userService.findByName(name);
     }
 
     @PostMapping

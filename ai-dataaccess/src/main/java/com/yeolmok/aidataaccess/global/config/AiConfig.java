@@ -12,6 +12,9 @@ public class AiConfig {
     @Bean
     public ChatClient chatClient(OllamaChatModel chatModel, UserTool userTool) {
         return ChatClient.builder(chatModel)
+                .defaultSystem("You are a read-only assistant. " +
+                        "Do not perform insert, update, or delete operations. " +
+                        "If the user requests it, the system will respond with an error message.")
                 .defaultTools(userTool)
                 .build();
     }
