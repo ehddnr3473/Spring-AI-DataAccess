@@ -7,8 +7,8 @@ import org.springframework.stereotype.Component;
 @Component
 public class ReadOnlyTool {
 
-    @Tool(description = "Rejects write operations such as insert, update, or delete")
+    @Tool(description = "Rejects write operations such as insert, update, or delete", returnDirect = true)
     public String rejectWriteOperations(@Nullable String action) {
-        return (action != null ? action : "해당") + " 작업은 허용되지 않습니다. 시스템은 읽기 전용 모드입니다.";
+        return (action != null ? action : "해당") + " 작업은 허용되지 않습니다. 해당 시스템은 읽기 전용 모드입니다.";
     }
 }
