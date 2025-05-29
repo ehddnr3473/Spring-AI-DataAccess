@@ -4,6 +4,8 @@ import com.yeolmok.aidataaccess.domain.post.tool.PostTool;
 import com.yeolmok.aidataaccess.domain.user.tool.UserTool;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.ollama.OllamaChatModel;
+import org.springframework.ai.tool.execution.DefaultToolExecutionExceptionProcessor;
+import org.springframework.ai.tool.execution.ToolExecutionExceptionProcessor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
@@ -24,5 +26,10 @@ public class AiConfig {
                        """)
                 .defaultTools(readOnlyTool, userTool, postTool)
                 .build();
+    }
+
+    @Bean
+    ToolExecutionExceptionProcessor toolExecutionExceptionProcessor() {
+        return new DefaultToolExecutionExceptionProcessor(false);
     }
 }
