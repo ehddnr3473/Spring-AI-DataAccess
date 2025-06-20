@@ -15,12 +15,16 @@ public class UserTool {
 
     private final UserService userService;
 
-    @Tool(description = "Get all users", returnDirect = true)
+    @Tool(description = "Get all users")
     public List<User> getAllUsers() {
         return userService.findAll();
     }
 
-    @Tool(description = "Get a user by their id", returnDirect = true, resultConverter = UserToolCallResultConverter.class)
+    @Tool(
+            description = "Get a user by their id",
+            returnDirect = true,
+            resultConverter = UserToolCallResultConverter.class
+    )
     public User getUserById(Long id) {
         return userService.findById(id)
                 .orElseThrow(() -> new NoSuchElementException("해당 ID의 유저가 없습니다."));
